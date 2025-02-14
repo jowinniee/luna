@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Match ou Mirage ? 💖✨</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background: linear-gradient(to bottom, #ffccff, #ff99cc);
+            color: #ff4da6;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: #fff0f5;
+            padding: 30px;
+            border-radius: 25px;
+            box-shadow: 0px 0px 25px rgba(255, 105, 180, 0.7);
+            border: 5px solid #ff66b2;
+        }
+        select {
+            width: 100%;
+            padding: 12px;
+            margin: 12px 0;
+            border: 3px solid #ff80bf;
+            border-radius: 12px;
+            font-size: 18px;
+            background-color: #fffafc;
+            color: #ff1a75;
+        }
+        button {
+            background-color: #ff4da6;
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            cursor: pointer;
+            border-radius: 14px;
+            font-size: 20px;
+            box-shadow: 0px 5px 15px rgba(255, 105, 180, 0.6);
+            transition: 0.3s;
+        }
+        button:hover {
+            background-color: #ff1a75;
+        }
+        h1 {
+            font-size: 32px;
+            font-weight: bold;
+            color: #ff1a75;
+            text-shadow: 2px 2px 5px rgba(255, 105, 180, 0.6);
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #ff1a75;
+        }
+    </style>
+    <script>
+        function calculateScore() {
+            let scores = 0;
+            let selects = document.querySelectorAll("select");
+
+            selects.forEach(select => {
+                scores += parseInt(select.value);
+            });
+
+            let compatibility = (scores / 30) * 100;
+            document.getElementById("result").innerText = "Résultat : " + scores + "/30 = " + compatibility.toFixed(1) + "%";
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>💖 Match ou Mirage ? ✨</h1>
+
+        <form onsubmit="calculateScore(); return false;">
+            <h2>💕 Relations et valeurs</h2>
+            <label>Quelle valeur te parle le plus ?</label>
+            <select>
+                <option value="5">Accomplissement</option>
+                <option value="10">Ouverture d'esprit</option>
+                <option value="8">Amour</option>
+                <option value="6">Spiritualité</option>
+                <option value="3">Leadership</option>
+                <option value="6">Intelligence</option>
+                <option value="5">Famille</option>
+                <option value="8">Écoute</option>
+                <option value="9">Soutien</option>
+                <option value="9">Respect</option>
+                <option value="7">Complicité</option>
+                <option value="9">Authenticité</option>
+                <option value="8">Créativité</option>
+                <option value="8">Sécurité</option>
+                <option value="1">Good vibes only</option>
+                <option value="3">Végétarisme</option>
+                <option value="9">Féminisme</option>
+            </select>
+
+            <h2>🎨 Création et inspiration</h2>
+            <label>Quelle forme de créativité préfères-tu ?</label>
+            <select>
+                <option value="10">Les arts visuels</option>
+                <option value="9">La musique et les mélodies</option>
+                <option value="5">Les sculptures</option>
+                <option value="5">La mode</option>
+                <option value="4">L'architecture</option>
+                <option value="6">Le cinéma</option>
+                <option value="8">L'écriture</option>
+                <option value="7">La photographie</option>
+                <option value="6">Jeux vidéos</option>
+                <option value="6">La danse</option>
+                <option value="7">Tatouages</option>
+                <option value="7">Graphisme</option>
+            </select>
+
+            <h2>🎡 Aventure et découvertes</h2>
+            <label>Quelle sortie idéale te tente le plus ?</label>
+            <select>
+                <option value="3">Parc d'attractions</option>
+                <option value="5">Musée</option>
+                <option value="2">Zoo</option>
+                <option value="3">Festival</option>
+                <option value="4">Randonnée et plein air</option>
+                <option value="5">Expositions diverses</option>
+                <option value="5">Cafés thématiques funky</option>
+                <option value="4">Cinéma en plein air</option>
+                <option value="5">Galerie d'art</option>
+                <option value="4">Bouquinerie</option>
+                <option value="3">Escape game</option>
+                <option value="3">Bar à jeux</option>
+                <option value="4">Spectacles de toutes sortes</option>
+            </select>
+
+            <button type="submit">💖 Tester la compatibilité ✨</button>
+        </form>
+
+        <div id="result"></div>
+    </div>
+</body>
+</html>
